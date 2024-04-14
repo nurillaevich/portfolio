@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="colorlib-main">
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container px-md-0">
+            <div class="row d-flex no-gutters">
+                {% for pricing in pricings %}
+                <div class="col-md-3 pricing">
+                    <div class="row no-gutters align-items-center">
+                        <div href="#" class="img w-100 js-fullheight d-flex align-items-center"
+                             style="background-image: url({{ pricing.image.url }});">
+                            <div class="text p-4 ftco-animate">
+                                <h3>{{ pricing.name }}</h3>
+                                <ul>
+                                    <li><span>Photos</span>{{ pricing.photo_count }}</li>
+                                    <li><span>Processing</span>{{ pricing.process }}</li>
+                                    <li><span>Type of Camera</span>{{ pricing.camera_type }}</li>
+                                    <li><span>Resolution</span>{{ pricing.resolution }}</li>
+                                    <li><span>Term</span>{{ pricing.term }}</li>
+                                </ul>
+                                <span class="price">{{ pricing.price }}</span>
+                                <p><a href="#" class="btn-custom">Explore</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                    {% endfor %}
+
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
